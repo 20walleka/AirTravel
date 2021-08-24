@@ -111,28 +111,20 @@ public class Airplane
     return destination;
   }//getDestination
   
-  //Requires testing -- format is done
   /* toString - This method will return a 
    * String of the airplane information.
    */
-  /*public String toString()
+  public String toString()
   {
     String stringReturn = null; 
     
     //Airplane info
-    stringReturn += "Airline: "+airline;
-    stringReturn += "Departing From: "+tripOrigin+" Arriving: "+destination;
-    stringReturn += "Passengers: "+numberPassengers+" Crew: "+numberCrew;
-    stringReturn += "Cargo Weight: "+cargoWeight+" Distance to Destination: "+kmToDestination+"km";
-    stringReturn += "Cost of Ticket: $%4.2f"+ticketCost;
-    stringReturn += "Passenger Manifest: \n";
-    
-    //Print out the info of the passengers on the plane
-    for(int i=0;i<peopleOnBoard.size();i++)
-    {
-      stringReturn += (peopleOnBoard.get(i)).toString()+"\n";
-    }//for
+    stringReturn = "Airline: "+airline+"\n";
+    stringReturn += "Departing From: "+tripOrigin+" Arriving: "+destination+"\n";
+    stringReturn += "Passengers: "+numberPassengers+" Crew: "+numberCrew+"\n";
+    stringReturn += "Cargo Weight: "+cargoWeight+" Distance to Destination: "+kmToDestination+"km"+"\n";
+    stringReturn += String.format("Cost of Ticket: $%4.2f",ticketCost)+"\n";
     
     return stringReturn;
-  }//tostring*/
+  }//tostring
 }//Airplane
