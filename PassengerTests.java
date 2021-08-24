@@ -14,7 +14,6 @@ import junit.framework.TestCase;
 
 public class PassengerTests extends TestCase 
 {
-    private String wantedString = null;
     private String lastName = "Smith";
     private String firstName = "Josh";
     private String nationality = "Canadian";
@@ -29,6 +28,9 @@ public class PassengerTests extends TestCase
    */
   public void testToStringMethod() 
   {
+    String wantedString = null;
+    
+    //Create the String to use in the test
     wantedString = "Name: "+lastName+", "+firstName+"\n";
     wantedString += "Age: "+age+"\n";
     wantedString += "Nationality of Passenger: "+nationality+"\n";
@@ -51,4 +53,17 @@ public class PassengerTests extends TestCase
     assertTrue("Trip Origins do NOT match",tripOrigin.equals(passenger1.getTripOrigin()));
     assertTrue("Destinations do NOT match",destination.equals(passenger1.getDestination()));
   }//testGetMethods
+  
+  /* testChangeDestination - This method will check
+   * to make sure the destination of the passenger will
+   * update correctly. 
+   */
+  public void testChangeDestination()
+  {
+    //Change destination for test
+    destination = "Berlin";
+    passenger1.changeDestination("Berlin");
+    
+    assertTrue("The destination was NOT changed",destination.equals(passenger1.getDestination()));
+  }//testChangeDestination
 }//PassengerTests
