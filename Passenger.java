@@ -90,4 +90,12 @@ public class Passenger
   {
     return destination;
   }//getDestination
+  
+  /* changeDestination - This method will allow the destination
+   * of the passenger to be changed. 
+   */
+  public void changeDestination(String newDestination)
+  {
+    destination = newDestination;
+  }//changeDestination
 }//Passenger
