@@ -26,4 +26,19 @@ public class Airplane
   private int ticketCost;
   private ArrayList<Passenger> peopleOnBoard;
   
+  /* This constructor will assign values to the 
+   * instance variables (except peopleOnBoard) using
+   * parameters of the same name. 
+   */
+  public Airplane(String airline, int numberPassengers, int numberCrew, int cargoWeight, int kmToDestination, int ticketCost)
+  {
+    //Set the instance variables
+    this.airline = airline;
+    this.numberPassengers = numberPassengers;
+    this.numberCrew = numberCrew;
+    this.cargoWeight = cargoWeight;
+    this.kmToDestination = kmToDestination;
+    this.ticketCost = ticketCost;
+    peopleOnBoard = new ArrayList<Passenger>();
+  }//Airplane
 }//Airplane
