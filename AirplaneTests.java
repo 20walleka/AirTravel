@@ -45,4 +45,15 @@ public class AirplaneTests extends TestCase
     assertTrue("Trip Origins do NOT match ",tripOrigin.equals(plane1.getTripOrigin()));
     assertTrue("Destinations do NOT match",destination.equals(plane1.getDestination()));
   }//testGetMethods
+  
+  /* testToStringMethod - This method will check to make
+   * sure the toString method returns the anticipated String.
+   */
+  public void testToString()
+  {
+    String anticipated = "Airline: "+airline+"\nDeparting From: "+tripOrigin+" Arriving: "+destination+"\nPassengers: "+numberPassengers+" Crew: "
+      +numberCrew+"\nCargo Weight: "+cargoWeight+" Distance to Destination: "+kmToDestination+"km"+String.format("\nCost of Ticket: $%4.2f",ticketCost)+"\n";
+    
+    assertTrue("Strings do NOT match",anticipated.equals(plane1.toString()));
+  }//testToString
 }//AirplaneTests
