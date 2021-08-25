@@ -20,7 +20,7 @@ public class AirplaneTests extends TestCase
   private String airline = "Air Canada";
   private int numberPassengers = 0;
   private int numberCrew = 7;
-  private int cargoWeight = 4700;
+  private int cargoWeight = 0;
   private int kmToDestination = 5842;
   private double ticketCost = 589.40;
   private String tripOrigin = "Winnipeg";
@@ -29,7 +29,9 @@ public class AirplaneTests extends TestCase
   private Passenger passengerTest2 =new Passenger("Jill","Green","Canadian","Winnipeg","Dublin",45);
   private Passenger passengerTest3 =new Passenger("Marvin","Adams","Irish","Winnipeg","Dublin",67);
   private ArrayList<Passenger> peopleOnBoard =  new ArrayList<Passenger>();
-  private Airplane plane1 = new Airplane("Air Canada",0,7,4700,5842,589.40,"Winnipeg","Dublin");
+  private Airplane plane1 = new Airplane("Air Canada",7,5842,589.40,"Winnipeg","Dublin");
+  private Cargo cargo1 = new Cargo("Passenger Bags",5678);
+  private Cargo cargo2 = new Cargo("Mail",494325);
   
   /* testGetMethods - This method will check 
    * to make sure the correct information is
@@ -77,4 +79,21 @@ public class AirplaneTests extends TestCase
     
     assertTrue("List is incorrect",compareTo.equals(plane1.passengerManifest()));
   }//testAddPassenger
+  
+  /* testAddCargo - This method will test the addCargo method
+   * in the Airplane class.
+   */
+  public void testAddCargo()
+  {
+    int compareTo1 = 5678;
+    
+    plane1.addCargo(cargo1);
+    
+    assertEquals("Cargo Weight is not equal", compareTo1, plane1.getCargoWeight());
+    
+    plane1.addCargo(cargo2); //This should not be added since it will be over the MAX_WEIGHT
+    
+    //Check that it wasn't updated
+    assertEquals("Cargo Weight is not equal", compareTo1, plane1.getCargoWeight());  
+  }//testAddCargo
 }//AirplaneTests
