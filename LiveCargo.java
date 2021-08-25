@@ -29,4 +29,13 @@ public class LiveCargo extends Cargo
     this.species = species;
     this.transportPurpose = transportPurpose;
   }//LiveCargo
+  
+  /* toString - This method will return the
+   * LiveCargo information as a String. (The
+   * Cargo information will also be included).
+   */
+  public String toString()
+  {
+    return super.toString()+"\n Species: "+species+" Purpose of Travel: "+transportPurpose;
+  }//toString
 }//LiveCargo
