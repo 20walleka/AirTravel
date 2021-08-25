@@ -27,23 +27,25 @@ public class Airplane
   private String tripOrigin;
   private String destination;
   private ArrayList<Passenger> peopleOnBoard;
+  private ArrayList<Cargo> cargoOnBoard;
   
   /* This constructor will assign values to the 
    * instance variables (except peopleOnBoard) using
    * parameters of the same name. 
    */
-  public Airplane(String airline, int numberPassengers, int numberCrew, int cargoWeight, int kmToDestination, double ticketCost, String tripOrigin, String destination)
+  public Airplane(String airline, int numberCrew, int kmToDestination, double ticketCost, String tripOrigin, String destination)
   {
     //Set the instance variables
     this.airline = airline;
     this.numberPassengers = 0;
     this.numberCrew = numberCrew;
-    this.cargoWeight = cargoWeight;
+    this.cargoWeight = 0;
     this.kmToDestination = kmToDestination;
     this.ticketCost = ticketCost;
     this.tripOrigin = tripOrigin;
     this.destination = destination;
     peopleOnBoard = new ArrayList<Passenger>();
+    cargoOnBoard = new ArrayList<Cargo>();
   }//Airplane
   
   /* getAirline - This method will return the
@@ -168,4 +170,40 @@ public class Airplane
      toReturn+=peopleOnBoard.get(peopleOnBoard.size()-1).getPassengerName();
     return toReturn;
   }//passengerManifest
+  
+  /* addCargo - This method will allow
+   * Cargo to be added to the Airplane
+   * as long as it will not be over the 
+   * MAX_WEIGHT.
+   */
+  public void addCargo(Cargo toAdd)
+  {
+    //Check to prevent null pointer exception 
+    try
+    {
+      //Check to make sure there is space on the flight for the cargo
+      cargoCheck(toAdd);
+      
+      //If there is space add the cargo to the flight
+      cargoOnBoard.add(toAdd);
+      cargoWeight += toAdd.getWeight();
+    }catch(OverFlightWeightException e)
+    {
+      System.out.println("Cannot add no space on flight!");
+    }//try-catch
+  }//addCargo
+  
+  /* cargoCheck - This method will check to make
+   * sure that the weight of the current and new
+   * cargo will not go over MAX_WEIGHT. If this
+   * is the case an OverFlightWeightException will
+   * be thrown.
+   */
+  private void cargoCheck(Cargo toAdd) throws OverFlightWeightException 
+  {
+    if((cargoWeight+toAdd.getWeight())>MAX_WEIGHT)
+    {
+      throw new OverFlightWeightException("WEIGHT: "+cargoWeight+toAdd.getWeight()+" MAX WEIGHT: "+MAX_WEIGHT);
+    }
+  }//cargoCheck
 }//Airplane
