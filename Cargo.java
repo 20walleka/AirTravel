@@ -25,4 +25,20 @@ public class Cargo
     this.type = type;
     this.weight = weight;
   }//Cargo
+  
+  /* toString - This method will return the cargo
+   * information as a String.
+   */
+  public String toString()
+  {
+    return "Cargo Type: "+type+"\nWeights: "+weight+"kg";
+  }//toString
+  
+  /* getWeight - This method will return the 
+   * weight of the cargo as an int. 
+   */
+  public int getWeight()
+  {
+    return weight;
+  }//getWeight
 }//Cargo
