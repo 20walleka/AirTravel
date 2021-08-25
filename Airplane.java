@@ -127,4 +127,45 @@ public class Airplane
     
     return stringReturn;
   }//tostring
+  
+  /* addPassenger - This method will add a passenger to
+   * the flight. This method will add a passenger object
+   * that already exists to the peopleOnBoard list. 
+   */
+  public void addPassenger(Passenger toBeAdded)
+  {
+    //Add to list
+    peopleOnBoard.add(toBeAdded);
+    
+    //Increase
+    numberPassengers++;
+  }//addPassenger
+  
+  /* addPassenger - This method will add a passenger to
+   * the flight. This method will add a newly created
+   * passenger object to the peopleOnBoard list. 
+   */
+  public void addPassenger(String firstName, String lastName, String nationality, String tripOrigin, String destination, int age)
+  {
+    //Add to list
+    peopleOnBoard.add(new Passenger(firstName, lastName, nationality, tripOrigin, destination, age));
+    
+    //Increase
+    numberPassengers++;
+  }//addPassenger
+  
+  /* passengerManifest - This method will return the
+   * passenger manifest holding all of the names of thoes
+   * on the flight. The names will be returned as a String.
+   */
+  public String passengerManifest()
+  {
+    String toReturn = "";
+    for(int i=0;i<peopleOnBoard.size()-1;i++)
+    {
+      toReturn+=peopleOnBoard.get(i).getPassengerName()+"\n";
+    }//for
+     toReturn+=peopleOnBoard.get(peopleOnBoard.size()-1).getPassengerName();
+    return toReturn;
+  }//passengerManifest
 }//Airplane
