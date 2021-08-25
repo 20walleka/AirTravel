@@ -25,6 +25,9 @@ public class AirplaneTests extends TestCase
   private double ticketCost = 589.40;
   private String tripOrigin = "Winnipeg";
   private String destination = "Dublin";
+  private Passenger passengerTest1 =new Passenger("Jane","Green","Canadian","Winnipeg","Dublin",47);
+  private Passenger passengerTest2 =new Passenger("Jill","Green","Canadian","Winnipeg","Dublin",45);
+  private Passenger passengerTest3 =new Passenger("Marvin","Adams","Irish","Winnipeg","Dublin",67);
   private ArrayList<Passenger> peopleOnBoard =  new ArrayList<Passenger>();
   private Airplane plane1 = new Airplane("Air Canada",0,7,4700,5842,589.40,"Winnipeg","Dublin");
   
@@ -56,4 +59,22 @@ public class AirplaneTests extends TestCase
     
     assertTrue("Strings do NOT match",anticipated.equals(plane1.toString()));
   }//testToString
+  
+  /* testAddPassenger - This method will test the addPassenger methods
+   * in the Airplane class.
+   */
+  public void testAddPassenger()
+  {
+    String compareTo = "Jane Green\nJill Green\nMarvin Adams\nHannah McLean\nAnita Kumar\nNoah Vogel";
+    
+    //Add Passengers 
+    plane1.addPassenger(passengerTest1);
+    plane1.addPassenger(passengerTest2);
+    plane1.addPassenger(passengerTest3);
+    plane1.addPassenger("Hannah", "McLean", "British", "Winnipeg", "Dublin", 33);
+    plane1.addPassenger("Anita", "Kumar", "Canadian", "Winnipeg", "Dublin", 24);
+    plane1.addPassenger("Noah", "Vogel", "German", "Winnipeg", "Dublin", 56);
+    
+    assertTrue("List is incorrect",compareTo.equals(plane1.passengerManifest()));
+  }//testAddPassenger
 }//AirplaneTests
