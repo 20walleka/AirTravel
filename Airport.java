@@ -21,6 +21,7 @@ public class Airport
   /* This constructor will assign values to the 
    * instance variables windSpeed and airportCode.
    */
-  public Airport
-  
+  public Airport(int windSpeed, String airportCode)
+  {
+  }//Airport
 }//Airport
