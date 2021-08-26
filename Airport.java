@@ -38,5 +38,27 @@ public class Airport
     planeList = new ArrayList<Airplane>();
   }//Airport
   
+  /* getWindSpeed - This method will
+   * return the windSpeed.
+   */
+  public int getWindSpeed()
+  {
+    return windSpeed;
+  }//getWindSpeed
   
+  /* setWindSpeed - This method will
+   * be used to get the windSpeed.
+   */
+  public void setWindSpeed(int newSpeed)
+  {
+    windSpeed = newSpeed;
+  }//setWindSpeed
+  
+  /* getAirportCode - This method will
+   * return the airportCode String.
+   */
+  public String getAirportCode()
+  {
+    return airportCode;
+  }//getAirportCode
 }//Airport
