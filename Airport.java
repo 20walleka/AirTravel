@@ -11,4 +11,16 @@
 
 public class Airport
 {
+  //Instance Variables
+  private int windSpeed;
+  private String airportCode;
+  private int numberPlanes;
+  private int totalPassengers;
+  private int totalCrew;
+  
+  /* This constructor will assign values to the 
+   * instance variables windSpeed and airportCode.
+   */
+  public Airport
+  
 }//Airport
