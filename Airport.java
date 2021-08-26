@@ -71,8 +71,8 @@ public class Airport
   public void addAirplane(Airplane planeAdd)
   {
     planeList.add(planeAdd);
-    //numberPassengers += planeAdd.getNumberPassengers();
-    //numberCrew += planeAdd.getNumberCrew();
+    totalPassengers += planeAdd.getNumberPassengers();
+    totalCrew += planeAdd.getNumberCrew();
     numberPlanes++;
   }//addAirplane
   
@@ -88,7 +88,42 @@ public class Airport
     {
       toReturn += planeList.get(i).getAirline()+" From: "+planeList.get(i).getTripOrigin()+" To: "+planeList.get(i).getDestination()+"\n";
     }//for
-    System.out.print(toReturn);
+    
     return toReturn;
   }//printPlaneList
+  
+  /* totalPlanes - This method will 
+   * return the total number of planes
+   * at the airport.
+   */
+  public int totalPlanes()
+  {
+    return numberPlanes;
+  }//totalPlanes
+  
+  /* totalPassengers - This method will 
+   * return the total number of passengers
+   * at the airport. 
+   */
+  public int totalPassengers()
+  {
+    return totalPassengers;
+  }//totalPassengers
+  
+  /* totalCrew - This method will 
+   * return the total number of crew
+   * at the airport.
+   */
+  public int totalCrew()
+  {
+    return totalCrew;
+  }//totalCrew
+  
+  /* toString - This method will return a 
+   * String of the airport information.
+   */
+  public String toString()
+  {
+    return "Airport Code: "+airportCode+" Current Wind Speed: "+windSpeed;
+  }//toString
 }//Airport
