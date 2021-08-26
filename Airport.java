@@ -14,6 +14,9 @@ import java.util.ArrayList;
 
 public class Airport
 {
+  //Constant
+  private static final int MAX_WIND = 40;
+  
   //Instance Variables
   private int windSpeed;
   private String airportCode;
@@ -51,7 +54,14 @@ public class Airport
    */
   public void setWindSpeed(int newSpeed)
   {
-    windSpeed = newSpeed;
+    try
+    {
+      windSpeed = newSpeed;
+      windSpeedCheck();
+    }catch(HighWindException e)
+    {
+      e.getMessage();
+    }//try-catch
   }//setWindSpeed
   
   /* getAirportCode - This method will
@@ -126,4 +136,16 @@ public class Airport
   {
     return "Airport Code: "+airportCode+" Current Wind Speed: "+windSpeed;
   }//toString
+  
+  /* windSpeedCheck - This method will check to make
+   * sure that the wind speed is not to high for a plane to
+   * take off. 
+   */
+  public void windSpeedCheck() throws HighWindException
+  {
+    if(windSpeed>=MAX_WIND)
+    {
+      throw new HighWindException("Wind Speed is too high for safe departure.");
+    }//if
+  }//windSpeedCheck
 }//Airport
