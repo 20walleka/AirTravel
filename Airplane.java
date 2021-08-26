@@ -29,8 +29,8 @@ public class Airplane
   private ArrayList<Passenger> peopleOnBoard;
   private ArrayList<Cargo> cargoOnBoard;
   
-  /* This constructor will assign values to the 
-   * instance variables (except peopleOnBoard) using
+  /* This constructor will assign values to  
+   * instance variables using
    * parameters of the same name. 
    */
   public Airplane(String airline, int numberCrew, int kmToDestination, double ticketCost, String tripOrigin, String destination)
