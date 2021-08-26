@@ -61,4 +61,34 @@ public class Airport
   {
     return airportCode;
   }//getAirportCode
+  
+  /* addAirplane - This method will
+   * add an Airplane object to the array
+   * list of planes at the airport. It
+   * will also update the number of passengers,
+   * crew, and planes at the airport. 
+   */
+  public void addAirplane(Airplane planeAdd)
+  {
+    planeList.add(planeAdd);
+    //numberPassengers += planeAdd.getNumberPassengers();
+    //numberCrew += planeAdd.getNumberCrew();
+    numberPlanes++;
+  }//addAirplane
+  
+  /* printPlaneList - This method will return the
+   * current planeList as a String.
+   */
+  public String printPlaneList()
+  {
+    String toReturn = "";
+    
+    //Loop to print the current planes at the airport.
+    for(int i=0;i<planeList.size();i++)
+    {
+      toReturn += planeList.get(i).getAirline()+" From: "+planeList.get(i).getTripOrigin()+" To: "+planeList.get(i).getDestination()+"\n";
+    }//for
+    System.out.print(toReturn);
+    return toReturn;
+  }//printPlaneList
 }//Airport
