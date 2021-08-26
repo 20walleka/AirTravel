@@ -189,7 +189,7 @@ public class Airplane
       cargoWeight += toAdd.getWeight();
     }catch(OverFlightWeightException e)
     {
-      System.out.println("Cannot add no space on flight!");
+      e.getMessage();
     }//try-catch
   }//addCargo
   
