@@ -38,17 +38,26 @@ public class AirportTests extends TestCase
     assertTrue("Airport Codes do not match",airportCodeGet.equals(airport1.getAirportCode()));
   }//testGetSetMethods
   
-  /*testAddAirplane - This method will test to 
+  /* testAddAirplane - This method will test to 
    * make sure that airplanes are added correctly.
    * It will also test the printPlaneList as well.
    */
   public void testAddAirplane()
   {
     String toCompare = "Air Canada From: Winnipeg To: Dublin\nWestJet From: Winnipeg To: Toronto\nSunwing From: Winnipeg To: Orlando\n";
-    System.out.print(toCompare);
+    
     airport1.addAirplane(plane1);
     airport1.addAirplane(plane2);
     airport1.addAirplane(plane3);
     assertTrue("Added Plane Lists do not match",toCompare.equals(airport1.printPlaneList()));
   }//testAddAirplane
+  
+  /* testToStringMethod - This method will check to make
+   * sure the toString method returns the anticipated String.
+   */
+  public void testToString()
+  {
+    String anticipated = "Airport Code: CYWG Current Wind Speed: 34";
+    assertTrue("Strings do NOT match",anticipated.equals(airport1.toString()));
+  }//testToString
 }//AirportTests
