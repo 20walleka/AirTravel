@@ -60,4 +60,19 @@ public class AirportTests extends TestCase
     String anticipated = "Airport Code: CYWG Current Wind Speed: 34";
     assertTrue("Strings do NOT match",anticipated.equals(airport1.toString()));
   }//testToString
+  
+  /* testWindSet - This method will check that if
+   * windSpeed is set to above the MAX_WIND allowed for
+   * take off that the HighWindException is thrown. 
+   */
+  public void testWindSet()
+  {
+     int windSet1 = 40;
+     int windSet2 = 41;
+     
+     airport1.setWindSpeed(windSet1);
+     assertEquals("Winds from set method do not match",windSet1,airport1.getWindSpeed());
+      airport1.setWindSpeed(windSet2);
+     assertEquals("Winds from set method do not match",windSet2,airport1.getWindSpeed());
+  }//testWindSet
 }//AirportTests
