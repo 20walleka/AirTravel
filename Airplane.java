@@ -202,7 +202,7 @@ public class Airplane
   {
     if((cargoWeight+toAdd.getWeight())>MAX_WEIGHT)
     {
-      String toReturn = "Cannot Add Cargo to - Plane Too Heavy\n"+this.toString();
+      String toReturn = "Cannot Add Cargo To "+airline+" with Destination: "+destination+" - Plane Too Heavy\n";
       
       throw new OverFlightWeightException(toReturn);
     }
