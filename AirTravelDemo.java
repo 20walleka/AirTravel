@@ -60,7 +60,7 @@ public class AirTravelDemo
     Cargo cargo2 = new Cargo("Baggage", 25000);
     Cargo cargo3 = new Cargo("Baggage", 35000);
     Cargo cargo4 = new Cargo("Baggage", 45000);
-    Cargo cargo5 = new Cargo("Mail", 5000);
+    Cargo cargo5 = new Cargo("Baggage", 15000);
     Cargo cargo6 = new Cargo("Mail", 10000);
     Cargo cargo7 = new Cargo("Mail",15000);
     Cargo cargo8 = new Cargo("Mail", 7000);
@@ -152,6 +152,35 @@ public class AirTravelDemo
     System.out.print(airplane4);
     System.out.println("Passengers:\n"+airplane4.passengerManifest()+"\n");
     
+    airplane5.addPassenger(passenger26);
+    airplane5.addPassenger(passenger27);
+    airplane5.addPassenger(passenger28);
+    airplane5.addPassenger(passenger29);
+    airplane5.addPassenger(passenger30);
+    airplane5.addPassenger(passenger31);
+    airplane5.addPassenger(passenger32);
+    System.out.print(airplane5);
+    System.out.println("Passengers:\n"+airplane5.passengerManifest()+"\n");
+    
+    //Add Cargo and Live Cargo
+    airplane1.addCargo(cargo1);
+    airplane2.addCargo(cargo2);
+    airplane3.addCargo(cargo3);
+    airplane4.addCargo(cargo4);
+    airplane5.addCargo(cargo5);
+    
+    System.out.print(airplane1+"\n");
+    System.out.print(airplane2+"\n");
+    System.out.print(airplane3+"\n");
+    System.out.print(airplane4+"\n");
+    System.out.print(airplane5+"\n");
+    
+    airplane3.addCargo(cargo7);
+    airplane4.addCargo(cargo6);
+    airplane5.addCargo(cargo8);
 
+    System.out.print(airplane3+"\n");
+    System.out.print(airplane4+"\n");
+    System.out.print(airplane5+"\n");   
   }//main
 }//AirTravelDemo
