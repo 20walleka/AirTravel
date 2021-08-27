@@ -178,7 +178,6 @@ public class Airplane
    */
   public void addCargo(Cargo toAdd)
   {
-    //Check to prevent null pointer exception 
     try
     {
       //Check to make sure there is space on the flight for the cargo
@@ -189,7 +188,7 @@ public class Airplane
       cargoWeight += toAdd.getWeight();
     }catch(OverFlightWeightException e)
     {
-      e.getMessage();
+      System.out.println(e.getMessage());
     }//try-catch
   }//addCargo
   
