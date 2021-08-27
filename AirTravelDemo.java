@@ -71,15 +71,45 @@ public class AirTravelDemo
     LiveCargo liveCargo4 = new LiveCargo("Live Cargo", 18, "Dog", "Pet");
     LiveCargo liveCargo5 = new LiveCargo("Live Cargo", 17, "Rabbits", "Medical Research");
     
-    System.out.println(airport);
+    System.out.println(airport+"\n");
     try
     {
       airport.windSpeedCheck();
+      System.out.println("Safe to take off");
     }catch(HighWindException e)
     {
-      e.getMessage();
+      System.out.println(e.getMessage());
     }//try-catch
     airport.addAirplane(airplane1);
-    System.out.print(airport.printPlaneList());
+    System.out.println(airport.printPlaneList());
+    airport.addAirplane(airplane2);
+    System.out.println(airport.printPlaneList());
+    airport.addAirplane(airplane3);
+    System.out.println(airport.printPlaneList());
+    airport.addAirplane(airplane4);
+    System.out.println(airport.printPlaneList());
+    airport.addAirplane(airplane5);
+    System.out.println(airport.printPlaneList());
+    
+    airport.setWindSpeed(57);
+    try
+    {
+      airport.windSpeedCheck();
+      System.out.println("Safe to take off");
+    }catch(HighWindException e)
+    {
+      System.out.println(e.getMessage());
+    }//try-catch
+    
+    System.out.println("30 mins later - The wind has reduced.");
+    airport.setWindSpeed(34);
+    try
+    {
+      airport.windSpeedCheck();
+      System.out.println("Safe to take off");
+    }catch(HighWindException e)
+    {
+      System.out.println(e.getMessage());
+    }//try-catch
   }//main
 }//AirTravelDemo
