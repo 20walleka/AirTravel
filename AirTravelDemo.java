@@ -182,5 +182,16 @@ public class AirTravelDemo
     System.out.print(airplane3+"\n");
     System.out.print(airplane4+"\n");
     System.out.print(airplane5+"\n");   
+    
+    airplane1.addCargo(liveCargo1);
+    airplane1.addCargo(liveCargo2);
+    airplane2.addCargo(liveCargo3);
+    airplane4.addCargo(liveCargo4);
+    airplane5.addCargo(liveCargo5);
+    
+    System.out.print(airplane1+"\n");
+    System.out.print(airplane2+"\n");
+    System.out.print(airplane4+"\n");
+    System.out.print(airplane5+"\n");
   }//main
 }//AirTravelDemo
