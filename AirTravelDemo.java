@@ -106,10 +106,48 @@ public class AirTravelDemo
     try
     {
       airport.windSpeedCheck();
-      System.out.println("Safe to take off");
+      System.out.println("Safe to take off\n");
     }catch(HighWindException e)
     {
       System.out.println(e.getMessage());
     }//try-catch
+    
+    //Add Passengers to airplanes 
+    airplane1.addPassenger(passenger1);
+    airplane1.addPassenger(passenger2);
+    airplane1.addPassenger(passenger3);
+    airplane1.addPassenger(passenger4);
+    airplane1.addPassenger(passenger5);
+    airplane1.addPassenger("Jana", "Doe", "American", "Toronto", "Los Angeles", 23);
+    System.out.print(airplane1);
+    System.out.println("Passengers:\n"+airplane1.passengerManifest()+"\n");
+    
+    airplane2.addPassenger(passenger6);
+    airplane2.addPassenger(passenger7);
+    airplane2.addPassenger(passenger8);
+    airplane2.addPassenger(passenger9);
+    airplane2.addPassenger(passenger10);
+    airplane2.addPassenger(passenger11);
+    airplane2.addPassenger("Ellen", "Weber", "German", "Toronto", "Frankfurt", 18);
+    System.out.print(airplane2);
+    System.out.println("Passengers:\n"+airplane2.passengerManifest()+"\n");
+    
+    airplane2.addPassenger(passenger6);
+    airplane2.addPassenger(passenger7);
+    airplane2.addPassenger(passenger8);
+    airplane2.addPassenger(passenger9);
+    airplane2.addPassenger(passenger10);
+    airplane2.addPassenger(passenger11);
+    System.out.print(airplane2);
+    System.out.println("Passengers:\n"+airplane2.passengerManifest()+"\n");
+    
+    airplane3.addPassenger(passenger12);
+    airplane3.addPassenger(passenger13);
+    airplane3.addPassenger(passenger14);
+    airplane3.addPassenger(passenger15);
+    airplane3.addPassenger(passenger16);
+    airplane3.addPassenger(passenger17);
+    System.out.print(airplane3);
+    System.out.println("Passengers:\n"+airplane3.passengerManifest()+"\n");
   }//main
 }//AirTravelDemo
