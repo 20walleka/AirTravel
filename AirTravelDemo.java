@@ -132,15 +132,6 @@ public class AirTravelDemo
     System.out.print(airplane2);
     System.out.println("Passengers:\n"+airplane2.passengerManifest()+"\n");
     
-    airplane2.addPassenger(passenger6);
-    airplane2.addPassenger(passenger7);
-    airplane2.addPassenger(passenger8);
-    airplane2.addPassenger(passenger9);
-    airplane2.addPassenger(passenger10);
-    airplane2.addPassenger(passenger11);
-    System.out.print(airplane2);
-    System.out.println("Passengers:\n"+airplane2.passengerManifest()+"\n");
-    
     airplane3.addPassenger(passenger12);
     airplane3.addPassenger(passenger13);
     airplane3.addPassenger(passenger14);
@@ -149,5 +140,18 @@ public class AirTravelDemo
     airplane3.addPassenger(passenger17);
     System.out.print(airplane3);
     System.out.println("Passengers:\n"+airplane3.passengerManifest()+"\n");
+    
+    airplane4.addPassenger(passenger18);
+    airplane4.addPassenger(passenger19);
+    airplane4.addPassenger(passenger20);
+    airplane4.addPassenger(passenger21);
+    airplane4.addPassenger(passenger22);
+    airplane4.addPassenger(passenger23);
+    airplane4.addPassenger(passenger24);
+    airplane4.addPassenger(passenger25);
+    System.out.print(airplane4);
+    System.out.println("Passengers:\n"+airplane4.passengerManifest()+"\n");
+    
+
   }//main
 }//AirTravelDemo
