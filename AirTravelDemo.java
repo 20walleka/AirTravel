@@ -71,6 +71,15 @@ public class AirTravelDemo
     LiveCargo liveCargo4 = new LiveCargo("Live Cargo", 18, "Dog", "Pet");
     LiveCargo liveCargo5 = new LiveCargo("Live Cargo", 17, "Rabbits", "Medical Research");
     
-    
+    System.out.println(airport);
+    try
+    {
+      airport.windSpeedCheck();
+    }catch(HighWindException e)
+    {
+      e.getMessage();
+    }//try-catch
+    airport.addAirplane(airplane1);
+    System.out.print(airport.printPlaneList());
   }//main
 }//AirTravelDemo
