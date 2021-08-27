@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Airplane
 {
   //Constant
-  private static final int MAX_WEIGHT = 500000;
+  private static final int MAX_WEIGHT = 50000;
   
   //Instance Variables
   private String airline;
@@ -202,7 +202,9 @@ public class Airplane
   {
     if((cargoWeight+toAdd.getWeight())>MAX_WEIGHT)
     {
-      throw new OverFlightWeightException("WEIGHT: "+cargoWeight+toAdd.getWeight()+" MAX WEIGHT: "+MAX_WEIGHT);
+      String toReturn = "Cannot Add Cargo to - Plane Too Heavy\n"+this.toString();
+      
+      throw new OverFlightWeightException(toReturn);
     }
   }//cargoCheck
 }//Airplane
