@@ -21,7 +21,7 @@ public class CargoTests extends TestCase
   
   /* testGetMethod - This method will check 
    * to make sure the correct information is
-   * returned from getWeight
+   * returned from getWeight.
    */
   public void testGetMethod()
   {
